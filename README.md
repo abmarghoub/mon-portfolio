@@ -64,27 +64,33 @@ Il présente :
 - **Design cohérent**, responsive, palette bordeaux 
 - **Pages :**
   - **Home** : profil, rôle, badges, liens projets/contact
-    <img width="1027" height="903" alt="image" src="https://github.com/user-attachments/assets/ae5f4ec7-11cb-4d4a-8e2e-967f4ca4f5da" />
+    <img width="862" height="970" alt="image" src="https://github.com/user-attachments/assets/86c291d0-f916-4671-81c1-4a7311dc362a" />
+
 
   - **Projects** : cartes projets
     
-    <img width="1045" height="854" alt="image" src="https://github.com/user-attachments/assets/f49e28ed-7a46-4308-936d-834930f038a8" />
+   <img width="847" height="952" alt="image" src="https://github.com/user-attachments/assets/1087eb04-d6d4-4289-b402-7a9e22b4df16" />
+
 
   - **Experience** : parcours professionnel
     
-    <img width="1032" height="749" alt="image" src="https://github.com/user-attachments/assets/02f647ca-69fe-4a73-8690-bdcfdde22025" />
+   <img width="827" height="951" alt="image" src="https://github.com/user-attachments/assets/90e79738-55e3-4c87-81c0-d275d5b947f6" />
 
   - **Education** : timeline diplômes et cours
     
-    <img width="1022" height="892" alt="image" src="https://github.com/user-attachments/assets/90930678-f835-408d-b527-364ca084af55" />
+    <img width="893" height="1016" alt="image" src="https://github.com/user-attachments/assets/444d74cf-2694-477f-be7d-581d2f12cc79" />
 
   - **Certifications** : badges avec filtre et liens de vérification
 
-    <img width="1039" height="814" alt="image" src="https://github.com/user-attachments/assets/e50481c0-09c5-47a0-8780-1073b726dddc" />
+    <img width="936" height="1014" alt="image" src="https://github.com/user-attachments/assets/7e6ff2af-b6bb-487b-8fe6-f10469a7e06e" />
+
+<img width="880" height="918" alt="image" src="https://github.com/user-attachments/assets/22d67a98-6171-4b09-ada4-5094126e458f" />
+
 
   - **Contact** : formulaire simple avec lien mailto
  
-    <img width="1040" height="849" alt="image" src="https://github.com/user-attachments/assets/ee90a909-d410-4f08-ada6-f4bb0e163947" />
+    <img width="954" height="1003" alt="image" src="https://github.com/user-attachments/assets/0abcc6a9-2c7c-4b89-bb28-f61ff508dee8" />
+
 
 - **Dark Mode** toggle avec mémorisation
 
