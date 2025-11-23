@@ -91,15 +91,19 @@ Il présente :
  
     <img width="954" height="1003" alt="image" src="https://github.com/user-attachments/assets/0abcc6a9-2c7c-4b89-bb28-f61ff508dee8" />
 
+    <img width="786" height="133" alt="image" src="https://github.com/user-attachments/assets/95ea2ded-884d-4dd6-8a4e-da853769ee7f" />
+
+    <img width="1342" height="549" alt="image" src="https://github.com/user-attachments/assets/809efe74-4fdf-450a-872a-1f8c3f0c0b3f" />
+
+
 
 - **Dark Mode** toggle avec mémorisation
 
-  <img width="1030" height="102" alt="image" src="https://github.com/user-attachments/assets/e7b3011e-97d4-46ec-bdde-790a05052ead" />
+  <img width="865" height="690" alt="image" src="https://github.com/user-attachments/assets/b5607bb4-7bd9-4aaf-8e4e-1c9fa4ad855f" />
 
 - **SEO minimal** avec `<Helmet>` et JSON-LD pour Knowledge Graph
 
 ## Déploiement
-
-https://portfoloi-an22.vercel.app
+(https://marghoub-abla.vercel.app/)
 ---
 
