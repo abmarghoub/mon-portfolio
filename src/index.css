@@ -1,22 +1,26 @@
 @import "tailwindcss";
-
 @plugin "tailwindcss-animate";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
+/* ============================= */
+/* 🔤 Police globale : Arial      */
+/* ============================= */
 :root {
+  font-family: Arial, sans-serif !important;
+
   color-scheme: light dark;
   --radius: 0.625rem;
 
   /* Palette rouge/bordeaux */
-  --background: #f66d7f; /* fond clair rosé */
-  --foreground: #3b0a0f; /* texte sombre rouge foncé */
+  --background: #f66d7f;
+  --foreground: #3b0a0f;
   --card: #ffe4e8;
   --card-foreground: #3b0a0f;
   --popover: #ffd9df;
-  --popover-foreground: #3b0a0f;
-  --primary: #b83b45; /* rouge principal */
+  --popover-foreground: #3b0a00f;
+  --primary: #b83b45;
   --primary-foreground: #fff0f2;
   --secondary: #f7a1aa;
   --secondary-foreground: #3b0a0f;
@@ -43,6 +47,43 @@
   --sidebar-ring: #f08f9a;
 }
 
+.dark {
+  --background: #3b0a0f;
+  --foreground: #fff0f2;
+  --card: #b83b45;
+  --card-foreground: #fff0f2;
+  --popover: #9b1f28;
+  --popover-foreground: #fff0f2;
+  --primary: #f08f9a;
+  --primary-foreground: #3b0a0f;
+  --secondary: #e76a73;
+  --secondary-foreground: #fff0f2;
+  --muted: #d94c5c;
+  --muted-foreground: #fff0f2;
+  --accent: #f28b93;
+  --accent-foreground: #3b0a0f;
+  --destructive: #9b1f28;
+  --border: #b83b45;
+  --input: #b83b45;
+  --ring: #f08f9a;
+  --chart-1: #f28b93;
+  --chart-2: #e76a73;
+  --chart-3: #d94c5c;
+  --chart-4: #b83b45;
+  --chart-5: #9b1f28;
+  --sidebar: #b83b45;
+  --sidebar-foreground: #fff0f2;
+  --sidebar-primary: #f08f9a;
+  --sidebar-primary-foreground: #fff0f2;
+  --sidebar-accent: #e76a73;
+  --sidebar-accent-foreground: #fff0f2;
+  --sidebar-border: #9b1f28;
+  --sidebar-ring: #f08f9a;
+}
+
+/* ============================= */
+/* 🎨 Tailwind custom theme layer */
+/* ============================= */
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -82,46 +123,78 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-.dark {
-  --background: #3b0a0f; /* fond sombre bordeaux */
-  --foreground: #fff0f2;
-  --card: #b83b45;
-  --card-foreground: #fff0f2;
-  --popover: #9b1f28;
-  --popover-foreground: #fff0f2;
-  --primary: #f08f9a;
-  --primary-foreground: #3b0a0f;
-  --secondary: #e76a73;
-  --secondary-foreground: #fff0f2;
-  --muted: #d94c5c;
-  --muted-foreground: #fff0f2;
-  --accent: #f28b93;
-  --accent-foreground: #3b0a0f;
-  --destructive: #9b1f28;
-  --border: #b83b45;
-  --input: #b83b45;
-  --ring: #f08f9a;
-  --chart-1: #f28b93;
-  --chart-2: #e76a73;
-  --chart-3: #d94c5c;
-  --chart-4: #b83b45;
-  --chart-5: #9b1f28;
-  --sidebar: #b83b45;
-  --sidebar-foreground: #fff0f2;
-  --sidebar-primary: #f08f9a;
-  --sidebar-primary-foreground: #fff0f2;
-  --sidebar-accent: #e76a73;
-  --sidebar-accent-foreground: #fff0f2;
-  --sidebar-border: #9b1f28;
-  --sidebar-ring: #f08f9a;
-  --font-semibold:#fff0f2;
+/* ============================= */
+/* ✨ Animations globales        */
+/* ============================= */
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
 }
 
+.slide-up {
+  animation: slideUp 0.7s ease forwards;
+}
+
+.zoom-hover:hover {
+  transform: scale(1.04);
+  transition: transform 0.25s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================= */
+/* 🌒 Correction Dark Mode Label */
+/* ============================= */
+/* INDISPENSABLE → labels visibles en dark mode */
+label {
+  color: var(--foreground) !important;
+}
+
+/* ============================= */
+/* 🧱 Base Layer                */
+/* ============================= */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: Arial, sans-serif !important;
   }
 }
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.zoom-hover:hover {
+  transform: scale(1.04);
+  transition: transform 0.25s ease-in-out;
+}
+
+/* Cards */
+.card {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+

@@ -3,32 +3,44 @@ export type Project = {
   period?: string;
   tags: string[];
   summary: string;
+  description?: string;
   link?: string;
   repo?: string;
   image?: string;
 };
 
 export const projects: Project[] = [
-  
-    {
+  {
     title: "GestAbs",
     period: "2024",
-    tags: ["Django","Python","OpenCV"],
-    summary: "Une application de gestion d'absence par reconnaissance faciale .",
+    tags: ["Django", "Python", "OpenCV", "HTML", "CSS", "JavaScript"],
+    summary: "Une application de gestion d'absence par reconnaissance faciale.",
+    description: "GestAbs est une application web permettant de suivre les absences des étudiants grâce à la reconnaissance faciale. Elle permet de marquer les présences automatiquement, gérer les utilisateurs et leurs notes. L'application combine Django pour le backend, Python pour les scripts de reconnaissance faciale et HTML/CSS/JS pour l'interface web.",
     repo: "https://github.com/abmarghoub",
   },
   {
     title: "Site immobilier",
     period: "2024",
-  tags: ["PHP","Html","CSS","JavaScript","MySQL"],
+    tags: ["PHP", "HTML", "CSS", "JavaScript", "MySQL"],
     summary: "Une application web de gestion immobilière avec fonctionnalités complètes.",
+    description: "Ce site web permet de gérer des biens immobiliers avec ajout, modification et suppression de propriétés, gestion des utilisateurs, recherche et reservation pour les biens immobiliers . L'application utilise PHP pour le backend, MySQL pour la base de données, et HTML/CSS/JavaScript pour le frontend.",
     repo: "https://github.com/abmarghoub",
   },
   {
     title: "Gestion de Cabinet Médical",
     period: "2025",
-  tags: ["Java","Hibernate","CSS","MySQL"],
-    summary: "Une application web de gestion immobilière avec fonctionnalités complètes.",
+    tags: ["Java", "Hibernate", "CSS", "MySQL", "Spring Boot"],
+    summary: "Une application web de gestion d’un cabinet médical.",
+    description: "Ce projet consiste à gérer les patients, les rendez-vous, les médecins et les dossiers médicaux. L'application utilise Java avec Spring Boot pour le backend, Hibernate pour la gestion des bases de données relationnelles, MySQL pour le stockage et CSS pour le design de l'interface utilisateur.",
     repo: "https://github.com/abmarghoub/mini-projet",
-  }
+  },
+  {
+  title: "Application Android Pizza",
+  period: "2025",
+  tags: ["Java", "Android Studio"],
+  summary: "Une application Android qui affiche une liste de pizzas avec détails et images.",
+  description: "Cette application Android permet d'afficher une liste de pizzas avec leur nom, prix, durée de préparation et image. L'utilisateur peut accéder à un détail complet de chaque pizza, naviguer facilement entre les écrans grâce à un passage de données entre activités, et bénéficie d'un Splash Screen animé au lancement de l'application. Le projet met en œuvre un modèle de données orienté objet et un Adapter personnalisé pour gérer efficacement l'affichage dans une ListView.",
+  repo: "https://github.com/abmarghoub/LAB-5-Pizza",
+}
+
 ];

@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 
 function fmt(date?: string) {
   if (!date) return "Présent";
+  if (!date.includes("-")) return date;
   const [y, m] = date.split("-");
   return `${m}/${y}`;
 }
@@ -18,26 +19,34 @@ export default function ExperiencePage() {
         />
       </Helmet>
 
-      <h2 className="text-2xl font-semibold">Parcours</h2>
+      <h2 className="text-2xl font-semibold fade-in">Parcours</h2>
 
-      <ol className="relative border-s">
-        {experiences.map((exp) => (
-          <li key={exp.title + exp.start} className="ms-6 pb-6">
-            <span className="absolute -start-1.5 mt-2 h-3 w-3 rounded-full bg-primary" />
-
-            <h3 className="font-semibold">
+      <div className="grid md:grid-cols-2 gap-6">
+        {experiences.map((exp, index) => (
+          <div
+            key={exp.title + exp.start}
+            className="card fade-in zoom-hover"
+            style={{ animationDelay: `${index * 0.1}s` }} // effet cascade
+          >
+            <h3 className="font-semibold text-lg">
               {exp.title}
-              <span className="text-sm text-muted-foreground">
-                {" "} @ {exp.company}
+              <span className="block text-sm text-muted-foreground">
+                @ {exp.company}
               </span>
             </h3>
 
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground mb-2">
               {fmt(exp.start)} — {fmt(exp.end)}
               {exp.location ? ` • ${exp.location}` : ""}
             </p>
 
-            <p className="mt-2">{exp.description}</p>
+            {exp.description && (
+              <ul className="list-disc ms-5 text-sm mb-2">
+                {exp.description.map((d) => (
+                  <li key={d}>{d}</li>
+                ))}
+              </ul>
+            )}
 
             {exp.tasks && (
               <ul className="list-disc ms-5 mt-2 text-sm">
@@ -52,16 +61,16 @@ export default function ExperiencePage() {
                 {exp.skills.map((s) => (
                   <span
                     key={s}
-                    className="border rounded px-2 py-0.5 text-muted-foreground"
+                    className="border rounded px-2 py-0.5 text-muted-foreground dark:text-muted-foreground"
                   >
                     {s}
                   </span>
                 ))}
               </div>
             )}
-          </li>
+          </div>
         ))}
-      </ol>
+      </div>
     </section>
   );
 }

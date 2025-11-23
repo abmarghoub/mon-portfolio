@@ -1,7 +1,7 @@
 import { profile } from "@/data/profile";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import profilePhoto from "@/assets/profile.jpeg";
+import profilePhoto from "@/assets/profile.jpg";
 
 export default function Home() {
   return (
@@ -15,39 +15,73 @@ export default function Home() {
       </Helmet>
 
       {/* Colonne gauche : texte */}
-      <div>
+      <div className="fade-in">
         <h1 className="text-4xl md:text-5xl font-bold">{profile.name}</h1>
         <p className="mt-2 text-xl">{profile.role}</p>
-        <p className="mt-1 text-sm text-muted-foreground">
-          {profile.location}
-        </p>
-
+        <span className="rounded-full border px-3 py-1 fade-in">{profile.location}</span>
+        <span className="rounded-full border px-3 py-1 fade-in">{profile.email}</span>
+        <span className="rounded-full border px-3 py-1 fade-in">Master TE (2025)</span>
         <p className="mt-4 text-muted-foreground">{profile.about}</p>
 
-        <div className="mt-6 flex gap-3">
-          <Link to="/projects" className="underline">
-            Voir les projets
-          </Link>
-          <Link to="/contact" className="underline">
-            Contact
-          </Link>
-        </div>
+       {/* Liens vers projets et contact comme spans arrondis */}
+<div className="mt-6 flex flex-wrap gap-2">
+  <Link
+    to="/projects"
+    className="rounded-full border px-4 py-2 text-sm font-medium text-primary hover:bg-primary/20 transition-all duration-300 cursor-pointer fade-in zoom-hover"
+  >
+    Voir les projets
+  </Link>
+
+  <Link
+    to="/contact"
+    className="rounded-full border px-4 py-2 text-sm font-medium text-primary hover:bg-primary/20 transition-all duration-300 cursor-pointer fade-in zoom-hover"
+  >
+    Contact
+  </Link>
+
+  {profile.socials.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border px-4 py-2 text-sm font-medium text-primary hover:bg-primary/20 transition-all duration-300 cursor-pointer fade-in zoom-hover"
+              >
+                {social.label}
+              </a>
+            ))}
+</div>
+
 
         <div className="mt-6 flex flex-wrap gap-2 text-sm">
-          <span className="rounded-full border px-3 py-1">
-            Master TE (2025)
-          </span>
-          
+
         </div>
       </div>
 
       {/* Colonne droite : photo */}
-      <div className="flex justify-center md:justify-end">
+      <div className="flex justify-center md:justify-end fade-in zoom-hover">
         <img
           src={profilePhoto}
           alt={profile.name}
-          className="w-100 h-150 md:w-80 md:h-150 rounded-2xl object-cover border shadow-sm"
+          className="w-70 h-70 md:w-70 md:h-70 rounded-2xl object-cover border shadow-sm"
         />
+      </div>
+
+      {/* Compétences */}
+      <div className="mt-6 md:col-span-2">
+        <h2 className="text-xl font-bold mb-2 fade-in">Compétences</h2>
+        <div className="grid grid-cols-5 gap-4">
+          {profile.skills.map((skill, index) => (
+            <div
+              key={skill.name}
+              className="flex flex-col items-center fade-in zoom-hover"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <img src={skill.img} alt={skill.name} className="w-12 h-12" />
+              <span className="mt-2 text-sm text-center">{skill.name}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

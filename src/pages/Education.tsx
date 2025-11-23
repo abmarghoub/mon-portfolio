@@ -3,10 +3,9 @@ import { Helmet } from "react-helmet-async";
 
 function fmt(date?: string) {
   if (!date) return "Présent";
-  // si c’est juste une année ("2020")
   if (!date.includes("-")) return date;
   const [y, m] = date.split("-");
-  return `${m}/${y}`; // 09/2023
+  return `${m}/${y}`;
 }
 
 export default function EducationPage() {
@@ -16,25 +15,27 @@ export default function EducationPage() {
         <title>Formations — Portfolio</title>
         <meta
           name="description"
-          content="Parcours scolaire : bac sciences physiques, FST MIPC, licence et master en informatique à l’ENS Cadi Ayyad."
+          content="Parcours scolaire : bac sciences, FST MIPC, licence et master en informatique à l’ENS Cadi Ayyad."
         />
       </Helmet>
 
-      <h2 className="text-2xl font-semibold">Formations</h2>
+      <h2 className="text-2xl font-semibold fade-in">Formations</h2>
 
-      <ol className="relative border-s">
-        {education.map((e) => (
-          <li key={e.id} className="ms-6 pb-6">
-            <span className="absolute -start-1.5 mt-2 h-3 w-3 rounded-full bg-primary" />
-
-            <h3 className="font-semibold">
+      <div className="grid md:grid-cols-2 gap-6">
+        {education.map((e, index) => (
+          <div
+            key={e.id}
+            className="card fade-in zoom-hover"
+            style={{ animationDelay: `${index * 0.1}s` }} // effet cascade
+          >
+            <h3 className="font-semibold text-lg">
               {e.title}
-              <span className="block text-sm text-muted-foreground">
+              <span className="block text-sm text-muted-foreground dark:text-muted-foreground">
                 @ {e.school}
               </span>
             </h3>
 
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground dark:text-muted-foreground mb-2">
               {fmt(e.start)} — {fmt(e.end)} • {e.location}
             </p>
 
@@ -45,9 +46,9 @@ export default function EducationPage() {
                 ))}
               </ul>
             )}
-          </li>
+          </div>
         ))}
-      </ol>
+      </div>
     </section>
   );
 }

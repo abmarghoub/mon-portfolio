@@ -28,46 +28,45 @@ export default function CertificationsPage() {
           <title>Certifications — Portfolio</title>
           <meta
             name="description"
-            content="Certifications professionnelles : AWS, Kubernetes, Cloud, DevOps."
+            content="Certifications professionnelles obtenues : Java, Hibernate, React."
           />
         </Helmet>
 
         <div className="flex items-center justify-between gap-4">
-          <h2 className="text-2xl font-semibold">Certifications</h2>
+          <h2 className="text-2xl font-semibold fade-in">Certifications</h2>
           <input
-            placeholder="Filtrer (ex: AWS, Kubernetes)"
+            placeholder="Filtrer (ex: React, Java, Hibernate)"
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            className="border rounded-xl px-3 py-2 w-72"
-            aria-label="Filtrer les certifications"
+            className="border rounded-xl px-3 py-2 w-72 dark:bg-card dark:text-foreground"
           />
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {list.map((c) => (
-            <CertificationCard
+          {list.map((c, index) => (
+            <div
               key={c.title + c.issueDate}
-              c={c}
-              onView={setSelected}
-            />
+              className="card fade-in zoom-hover"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <CertificationCard c={c} onView={setSelected} />
+            </div>
           ))}
         </div>
       </section>
 
-      {/* Popup / Lightbox */}
-      {selected && selected.image && (
+      {/* POPUP */}
+      {selected && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 fade-in"
           onClick={() => setSelected(null)}
         >
           <div
-            className="bg-white rounded-2xl p-4 max-w-3xl w-[90%] max-h-[90vh] flex flex-col gap-3"
-            onClick={(e) => e.stopPropagation()} // pour ne pas fermer en cliquant sur l'image
+            className="bg-card dark:bg-background text-foreground dark:text-foreground rounded-2xl p-6 max-w-3xl w-[90%] max-h-[90vh] overflow-auto flex flex-col gap-4"
+            onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center">
-              <h3 className="font-semibold text-lg">
-                {selected.title}
-              </h3>
+              <h3 className="font-semibold text-lg">{selected.title}</h3>
               <button
                 type="button"
                 className="text-sm underline"
@@ -77,11 +76,26 @@ export default function CertificationsPage() {
               </button>
             </div>
 
-            <img
-              src={selected.image}
-              alt={selected.imageAlt ?? selected.title}
-              className="mx-auto max-h-[70vh] w-auto object-contain"
-            />
+            {/* IMAGE AGRANDIE */}
+            {selected.image && (
+              <img
+                src={selected.image}
+                alt={selected.imageAlt ?? selected.title}
+                className="mx-auto max-h-[65vh] object-contain rounded-lg shadow"
+              />
+            )}
+
+            {/* BOUTON POUR VÉRIFIER */}
+            {selected.credentialUrl && (
+              <a
+                href={selected.credentialUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-3 bg-primary text-white text-center rounded-xl text-sm font-medium hover:opacity-90 mt-4"
+              >
+                Vérifier la certification
+              </a>
+            )}
           </div>
         </div>
       )}
