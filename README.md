@@ -50,6 +50,7 @@ Il présente :
 | **React Helmet Async** | SEO / gestion head |
 | **ESLint + Prettier** | Qualité et format du code |
 | **Vercel**          | Déploiement et hébergement |
+| **EmailJS**          | Envoi de formulaires de contact par email |
 
 ---
 
