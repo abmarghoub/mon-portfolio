@@ -16,10 +16,10 @@ export default function Contact() {
     setLoading(true);
     try {
       await emailjs.send(
-        "service_id",
-        "template_id",
+        "service_ab",
+        "template_dhf6458",
         { from_name: form.name, from_email: form.email, message: form.message },
-        "public_key"
+        "UYvcAk_b6b1NI7Sbw"
       );
       setSuccess("Message envoyé avec succès !");
       setForm({ name: "", email: "", message: "" });
