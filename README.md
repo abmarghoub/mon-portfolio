@@ -88,9 +88,10 @@ Il présente :
 <img width="880" height="918" alt="image" src="https://github.com/user-attachments/assets/22d67a98-6171-4b09-ada4-5094126e458f" />
 
 
-  - **Contact** : formulaire simple avec lien mailto
+  - **Contact** : formulaire de contact
  
-    <img width="954" height="1003" alt="image" src="https://github.com/user-attachments/assets/0abcc6a9-2c7c-4b89-bb28-f61ff508dee8" />
+    <img width="847" height="968" alt="image" src="https://github.com/user-attachments/assets/e2d4c73e-bfc9-462a-8835-22a275d0c175" />
+
 
     <img width="786" height="133" alt="image" src="https://github.com/user-attachments/assets/95ea2ded-884d-4dd6-8a4e-da853769ee7f" />
 
