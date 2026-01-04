@@ -1,0 +1,199 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================= */
+/* 🔤 Police globale : Arial      */
+/* ============================= */
+:root {
+  font-family: Arial, sans-serif !important;
+
+  color-scheme: light dark;
+  --radius: 0.625rem;
+
+  /* Palette rouge/bordeaux */
+  --background: #f66d7f;
+  --foreground: #3b0a0f;
+  --card: #ffe4e8;
+  --card-foreground: #3b0a0f;
+  --popover: #ffd9df;
+  --popover-foreground: #3b0a00f;
+  --primary: #b83b45;
+  --primary-foreground: #fff0f2;
+  --secondary: #f7a1aa;
+  --secondary-foreground: #3b0a0f;
+  --muted: #fcd7dc;
+  --muted-foreground: #6b1f26;
+  --accent: #f08f9a;
+  --accent-foreground: #3b0a0f;
+  --destructive: #9b1f28;
+  --border: #f7a1aa;
+  --input: #f7a1aa;
+  --ring: #f08f9a;
+  --chart-1: #f28b93;
+  --chart-2: #e76a73;
+  --chart-3: #d94c5c;
+  --chart-4: #b83b45;
+  --chart-5: #9b1f28;
+  --sidebar: #fff0f2;
+  --sidebar-foreground: #3b0a0f;
+  --sidebar-primary: #b83b45;
+  --sidebar-primary-foreground: #fff0f2;
+  --sidebar-accent: #f08f9a;
+  --sidebar-accent-foreground: #3b0a0f;
+  --sidebar-border: #f7a1aa;
+  --sidebar-ring: #f08f9a;
+}
+
+.dark {
+  --background: #3b0a0f;
+  --foreground: #fff0f2;
+  --card: #b83b45;
+  --card-foreground: #fff0f2;
+  --popover: #9b1f28;
+  --popover-foreground: #fff0f2;
+  --primary: #f08f9a;
+  --primary-foreground: #3b0a0f;
+  --secondary: #e76a73;
+  --secondary-foreground: #fff0f2;
+  --muted: #d94c5c;
+  --muted-foreground: #fff0f2;
+  --accent: #f28b93;
+  --accent-foreground: #3b0a0f;
+  --destructive: #9b1f28;
+  --border: #b83b45;
+  --input: #b83b45;
+  --ring: #f08f9a;
+  --chart-1: #f28b93;
+  --chart-2: #e76a73;
+  --chart-3: #d94c5c;
+  --chart-4: #b83b45;
+  --chart-5: #9b1f28;
+  --sidebar: #b83b45;
+  --sidebar-foreground: #fff0f2;
+  --sidebar-primary: #f08f9a;
+  --sidebar-primary-foreground: #fff0f2;
+  --sidebar-accent: #e76a73;
+  --sidebar-accent-foreground: #fff0f2;
+  --sidebar-border: #9b1f28;
+  --sidebar-ring: #f08f9a;
+}
+
+/* ============================= */
+/* 🎨 Tailwind custom theme layer */
+/* ============================= */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* ============================= */
+/* ✨ Animations globales        */
+/* ============================= */
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.7s ease forwards;
+}
+
+.zoom-hover:hover {
+  transform: scale(1.04);
+  transition: transform 0.25s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================= */
+/* 🌒 Correction Dark Mode Label */
+/* ============================= */
+/* INDISPENSABLE → labels visibles en dark mode */
+label {
+  color: var(--foreground) !important;
+}
+
+/* ============================= */
+/* 🧱 Base Layer                */
+/* ============================= */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: Arial, sans-serif !important;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.zoom-hover:hover {
+  transform: scale(1.04);
+  transition: transform 0.25s ease-in-out;
+}
+
+/* Cards */
+.card {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
