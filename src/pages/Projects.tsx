@@ -9,9 +9,9 @@ export default function ProjectsPage() {
         <meta name="description" content="Projets académiques et personnels." />
       </Helmet>
 
-      <h2 className="text-2xl font-semibold fade-in">Projets</h2>
+      <h2 className="text-xl sm:text-2xl font-semibold fade-in">Projets</h2>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {projects.map((proj, index) => (
           <div
             key={proj.title}
@@ -25,10 +25,10 @@ export default function ProjectsPage() {
                 className="rounded-md mb-3 w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
               />
             )}
-            <h3 className="font-semibold text-lg">{proj.title}</h3>
-            <p className="text-sm text-muted-foreground mb-2">{proj.period}</p>
-            <p className="text-sm mb-2">{proj.summary}</p>
-            <p className="text-sm mb-2 text-muted-foreground">{proj.description}</p>
+            <h3 className="font-semibold text-base sm:text-lg">{proj.title}</h3>
+            <p className="text-xs sm:text-sm text-muted-foreground mb-2">{proj.period}</p>
+            <p className="text-xs sm:text-sm mb-2">{proj.summary}</p>
+            <p className="text-xs sm:text-sm mb-2 text-muted-foreground line-clamp-3">{proj.description}</p>
 
             <div className="flex flex-wrap gap-2 text-xs mt-2">
               {proj.tags.map((t) => (

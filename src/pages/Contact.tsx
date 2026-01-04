@@ -31,7 +31,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="grid gap-6 max-w-3xl mx-auto py-10">
+    <section className="grid gap-4 sm:gap-6 max-w-3xl mx-auto py-6 sm:py-10">
       <Helmet>
         <title>Contact — Portfolio</title>
         <meta
@@ -40,22 +40,22 @@ export default function Contact() {
         />
       </Helmet>
 
-      <h1 className="text-3xl font-bold fade-in">Contact</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold fade-in">Contact</h1>
 
-      <p className="text-muted-foreground fade-in">
+      <p className="text-sm sm:text-base text-muted-foreground fade-in">
         Vous pouvez me contacter via les informations ci-dessous.
       </p>
 
-      <div className="border rounded-2xl p-6 shadow-sm bg-card fade-in">
-        <ul className="space-y-3 text-lg mb-6">
-          <li>
+      <div className="border rounded-2xl p-4 sm:p-6 shadow-sm bg-card fade-in">
+        <ul className="space-y-3 text-base sm:text-lg mb-6">
+          <li className="break-words">
             <span className="font-semibold text-foreground dark:text-foreground">Nom complet :</span>{" "}
             MARGHOUB Abla
           </li>
 
-          <li>
+          <li className="break-words">
             <span className="font-semibold">Email :</span>{" "}
-            <a href="mailto:a.marghoub5257@uca.ac.ma" className="underline text-primary">
+            <a href="mailto:a.marghoub5257@uca.ac.ma" className="underline text-primary break-all">
               a.marghoub5257@uca.ac.ma
             </a>
           </li>

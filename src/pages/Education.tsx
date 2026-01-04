@@ -15,13 +15,13 @@ export default function EducationPage() {
         <title>Formations — Portfolio</title>
         <meta
           name="description"
-          content="Parcours scolaire : bac sciences, FST MIPC, licence et master en informatique à l’ENS Cadi Ayyad."
+          content="Parcours scolaire : bac sciences, FST MIPC, licence et master en informatique à l'ENS Cadi Ayyad."
         />
       </Helmet>
 
-      <h2 className="text-2xl font-semibold fade-in">Formations</h2>
+      <h2 className="text-xl sm:text-2xl font-semibold fade-in">Formations</h2>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {education.map((e, index) => (
           <div
             key={e.id}

@@ -28,15 +28,15 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={() => setIsDark((v) => !v)}
-      className="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm bg-white/70 hover:bg-white dark:bg-zinc-800 dark:border-zinc-600 dark:text-zinc-50"
+      className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm bg-white/70 hover:bg-white dark:bg-zinc-800 dark:border-zinc-600 dark:text-zinc-50"
       aria-label="Basculer le thème clair/sombre"
     >
-      {/* petit rond pour l’icône (facultatif) */}
+      {/* petit rond pour l'icône (facultatif) */}
       <span
-        className="inline-block h-3 w-3 rounded-full bg-amber-400 dark:bg-zinc-100"
+        className="inline-block h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-amber-400 dark:bg-zinc-100"
         aria-hidden="true"
       />
-      <span>{isDark ? "Dark" : "Light"}</span>
+      <span className="hidden sm:inline">{isDark ? "Dark" : "Light"}</span>
     </button>
   );
 }

@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @plugin "tailwindcss-animate";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -197,4 +196,3 @@ label {
   transform: translateY(-4px);
   box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
-

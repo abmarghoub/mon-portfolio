@@ -32,17 +32,17 @@ export default function CertificationsPage() {
           />
         </Helmet>
 
-        <div className="flex items-center justify-between gap-4">
-          <h2 className="text-2xl font-semibold fade-in">Certifications</h2>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <h2 className="text-xl sm:text-2xl font-semibold fade-in">Certifications</h2>
           <input
             placeholder="Filtrer (ex: React, Java, Hibernate)"
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            className="border rounded-xl px-3 py-2 w-72 dark:bg-card dark:text-foreground"
+            className="border rounded-xl px-3 py-2 w-full sm:w-72 dark:bg-card dark:text-foreground text-sm sm:text-base"
           />
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {list.map((c, index) => (
             <div
               key={c.title + c.issueDate}
@@ -62,14 +62,14 @@ export default function CertificationsPage() {
           onClick={() => setSelected(null)}
         >
           <div
-            className="bg-card dark:bg-background text-foreground dark:text-foreground rounded-2xl p-6 max-w-3xl w-[90%] max-h-[90vh] overflow-auto flex flex-col gap-4"
+            className="bg-card dark:bg-background text-foreground dark:text-foreground rounded-2xl p-4 sm:p-6 max-w-3xl w-[95%] sm:w-[90%] max-h-[90vh] overflow-auto flex flex-col gap-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-between items-center">
-              <h3 className="font-semibold text-lg">{selected.title}</h3>
+            <div className="flex justify-between items-center gap-2">
+              <h3 className="font-semibold text-base sm:text-lg">{selected.title}</h3>
               <button
                 type="button"
-                className="text-sm underline"
+                className="text-xs sm:text-sm underline flex-shrink-0"
                 onClick={() => setSelected(null)}
               >
                 Fermer
