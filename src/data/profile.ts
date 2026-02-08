@@ -71,6 +71,7 @@ export const profile = {
   email: "a.marghoub5257@uca.ac.ma",
   socials: [
     { label: "GitHub", href: "https://github.com/abmarghoub?tab=repositories" }
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/abla-marghoub-771856397/" }
   ],
   about: "Je suis étudiante en Master de Technologies Émergentes, passionnée par l’innovation et le développement de solutions intelligentes. Curieuse et motivée, j’aime explorer les nouvelles tendances technologiques et comprendre comment elles peuvent transformer notre quotidien.",
   skills: [
