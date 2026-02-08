@@ -67,7 +67,7 @@ import biImg from "@/assets/BusinessIntelligence.png";
 export const profile = {
   name: "MARGHOUB Abla",
   role: "Technologies Emergentes / Etudiant",
-  location: "Marrakech, Maroc",
+  location: "Casablanca, Maroc",
   email: "a.marghoub5257@uca.ac.ma",
   socials: [
     { label: "GitHub", href: "https://github.com/abmarghoub?tab=repositories" }

@@ -2,7 +2,7 @@ import { profile } from "@/data/profile";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useState } from "react";
-import profilePhoto from "@/assets/profile.jpg";
+import profilePhoto from "@/assets/profilee.png";
 
 export default function Home() {
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
